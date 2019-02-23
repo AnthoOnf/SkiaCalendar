@@ -1,0 +1,17 @@
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/SkiaCalendar.csprojAssemblyReference.cache
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/SkiaCalendar.csproj.CoreCompileInputs.cache
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/bin/iPhoneSimulator/Debug/SkiaCalendar.exe
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/bin/iPhoneSimulator/Debug/SkiaCalendar.pdb
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/bin/iPhoneSimulator/Debug/SkiaSharp.dll
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/bin/iPhoneSimulator/Debug/SkiaSharp.xml
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/SkiaCalendar.csproj.CopyComplete
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/SkiaCalendar.exe
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/SkiaCalendar.pdb
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/bin/iPhoneSimulator/Debug/SkiaSharp.Views.iOS.dll
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/bin/iPhoneSimulator/Debug/SkiaSharp.Views.iOS.xml
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/actool/_PartialAppManifest.items
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/actool/_BundleResourceWithLogicalName.items
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/coremlc/_PartialAppManifest.items
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/coremlc/_BundleResourceWithLogicalName.items
+/Users/anthony/Projects/SkiaCalendar/SkiaCalendar/obj/iPhoneSimulator/Debug/device-builds/iphone10.6-12.1/optimized/
