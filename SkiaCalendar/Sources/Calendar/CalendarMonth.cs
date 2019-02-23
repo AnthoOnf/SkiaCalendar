@@ -14,8 +14,7 @@ namespace SkiaCalendar.Sources.Calendar
                             DateTime selectedDate,
                             Action<DateTime> onSelectDate,
                             CalendarPaints paints,
-                            CalendarRules calendarRules,
-                            Localize localize)
+                            CalendarRules calendarRules)
         {
             _onSelectDate = onSelectDate;
 
@@ -34,7 +33,7 @@ namespace SkiaCalendar.Sources.Calendar
             Add(new SkiaGrid(1, 1, CalendarDrawer.DAYS_PER_WEEK, paints.PaintLine, 0, CalendarDrawer.HeaderHeight));
 
             Add(new SkiaGrid(totalWeeks, CalendarDrawer.MAX_DISPLAYED_WEEKS, CalendarDrawer.DAYS_PER_WEEK, paints.PaintLine, CalendarDrawer.HeaderHeight));
-            Add(new CalendarWeekDays(paints.PaintHeaderDay, localize));
+            Add(new CalendarWeekDays(paints.PaintHeaderDay));
         }
 
         private void SelectDate(DateTime time)

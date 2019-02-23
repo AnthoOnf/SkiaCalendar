@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using SkiaCalendar.Sources.Drawing;
 using SkiaCalendar.Sources.Extensions;
 using SkiaCalendar.Sources.Settings;
@@ -24,8 +25,6 @@ namespace SkiaCalendar.Sources.Calendar
         private float _x, _y;
         private CalendarMonth _currentMonthSprite;
 
-        Localize _localize;
-
         public CalendarDrawer(CalendarSettings calendarSettings,
                               Action invalidate,
                               Action<MonthSelectionState> onMonthChange,
@@ -35,7 +34,6 @@ namespace SkiaCalendar.Sources.Calendar
             : base(invalidate, cellColor.ToSKColor(), marginH, marginV)
         {
             _calendarSettings = calendarSettings;
-            _localize = _calendarSettings.Localize;
             _onMonthChange = onMonthChange;
             _paints = new CalendarPaints(calendarSettings);
             _selectedDate = _currentMonth = calendarSettings.SelectedDate;
@@ -53,7 +51,7 @@ namespace SkiaCalendar.Sources.Calendar
 
             _currentMonth = selectedMonth;
 
-            _currentMonthSprite = new CalendarMonth(_currentMonth, _selectedDate, SelectDate, _paints, _calendarSettings.CalendarRules, _localize);
+            _currentMonthSprite = new CalendarMonth(_currentMonth, _selectedDate, SelectDate, _paints, _calendarSettings.CalendarRules);
             Add(_currentMonthSprite);
 
             SetNeedsDisplay();
@@ -64,7 +62,7 @@ namespace SkiaCalendar.Sources.Calendar
                             _currentMonth.GetFirstDayOfMonth() > _calendarSettings.CalendarRules.MinSelectableDate.Value.GetFirstDayOfMonth(),
                 CanGoForward = !_calendarSettings.CalendarRules.MaxSelectableDate.HasValue ||
                                 _currentMonth.GetFirstDayOfMonth() < _calendarSettings.CalendarRules.MaxSelectableDate.Value.GetFirstDayOfMonth(),
-                MonthName = _currentMonth.ToString(_calendarSettings.DateFormat, _calendarSettings.Localize.GetCurrentCultureInfo())
+                MonthName = _currentMonth.ToString(_calendarSettings.DateMonthFormat, _calendarSettings.Culture)
             });
         }
 
@@ -81,15 +79,16 @@ namespace SkiaCalendar.Sources.Calendar
             var canvas = eSurface.Canvas;
             var size = eInfo.Size;
 
-            canvas.Scale((int)UIKit.UIScreen.MainScreen.Scale);
+            canvas.Scale(_calendarSettings.ScaleFactor);
 
-            Draw(canvas, new SKRect(0, 0, size.Width / (int)UIKit.UIScreen.MainScreen.Scale, size.Height / (int)UIKit.UIScreen.MainScreen.Scale));
+            Draw(canvas, new SKRect(0, 0, size.Width / _calendarSettings.ScaleFactor,
+                                          size.Height / _calendarSettings.ScaleFactor));
         }
 
         public void OnPressGesture(SKTouchEventArgs sk)
         {
-            _x = sk.Location.X / (int)UIKit.UIScreen.MainScreen.Scale;
-            _y = sk.Location.Y / (int)UIKit.UIScreen.MainScreen.Scale;
+            _x = sk.Location.X / _calendarSettings.ScaleFactor;
+            _y = sk.Location.Y / _calendarSettings.ScaleFactor;
             var b = _currentMonthSprite?.GetSpriteAt<SkiaButton>(new SKPoint(_x, _y));
             b?.OnPress();
         }

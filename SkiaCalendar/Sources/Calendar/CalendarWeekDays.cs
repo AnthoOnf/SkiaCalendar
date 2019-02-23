@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using SkiaCalendar.Sources.Drawing;
 using SkiaCalendar.Sources.Settings;
@@ -12,14 +13,14 @@ namespace SkiaCalendar.Sources.Calendar
         private SKPaint _paint { get; set; }
         private readonly List<string> _daysOfWeek;
 
-        public CalendarWeekDays(SKPaint paint, Localize localize)
+        public CalendarWeekDays(SKPaint paint)
         {
             _paint = paint;
 
             _daysOfWeek = Enum.GetValues(typeof(DayOfWeek))
                 .Cast<DayOfWeek>()
                 .Select(d => (((int)d + 1) % 7))
-                .Select(d => localize.GetCurrentCultureInfo().DateTimeFormat.DayNames[d])
+                .Select(d => new CultureInfo("en").DateTimeFormat.DayNames[d])
                 .Select(d => d.Substring(0, 1))
                 .ToList();
         }

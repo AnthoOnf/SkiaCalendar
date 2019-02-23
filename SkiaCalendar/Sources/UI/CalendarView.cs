@@ -34,7 +34,7 @@ namespace SkiaCalendar.Sources.UI
             calendarView.CalendarGridWrapperView.AddSubview(calendarView._calendarGridView);
             calendarView._calendarGridView.PaintSurface += calendarView.OnPaintSurface;
             calendarView._calendarGridView.SetNeedsDisplay();
-            calendarView._calendarGridView.AddGestureRecognizer(new SkiaPressGestureRecognizer(calendarView._calendarGridView, calendarView.OnSliderTouchOrMove));
+            calendarView._calendarGridView.AddGestureRecognizer(new SkiaPressGestureRecognizer(calendarView._calendarGridView, calendarView.OnSliderTouchOrMove, calendarSettings));
 
             calendarView.NextButton.TouchUpInside += calendarView.OnNextButtonPressed;
             calendarView.PrevButton.TouchUpInside += calendarView.OnPrevButtonPressed;
@@ -53,14 +53,13 @@ namespace SkiaCalendar.Sources.UI
             _calendarGridView.Frame = CalendarGridWrapperView.Bounds;
         }
 
-        //void BindComponentsStyle()
-        //{
-        //    MonthName.ApplyStyle(_calendarSettings.MonthNameStyle);
-        //    CalendarHeaderTopSeparator.ApplyBackgroundColor(_calendarSettings.HorizontalSeparatorColor);
-        //    CalendarHeaderBottomSeparator.ApplyBackgroundColor(_calendarSettings.HorizontalSeparatorColor);
-        //    CalendarHeaderLeftSeparator.ApplyBackgroundColor(_calendarSettings.VerticalSeparatorColor);
-        //    CalendarHeaderRightSeparator.ApplyBackgroundColor(_calendarSettings.VerticalSeparatorColor);
-        //}
+        public void AdjustCalendarView()
+        {
+            nfloat availableHeight = Superview.Frame.Width;
+            nfloat definedHeight = (availableHeight / CalendarDrawer.DAYS_PER_WEEK) * CalendarDrawer.MAX_DISPLAYED_WEEKS;
+
+            ResizeAndLayoutIfNeeded(definedHeight);
+        }
 
         private void OnMonthChanged(MonthSelectionState obj)
         {

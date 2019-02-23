@@ -145,19 +145,18 @@
     <Compile Include="Sources\Calendar\CalendarPrevNext.cs" />
     <Compile Include="Sources\Calendar\CalendarWeekDays.cs" />
     <Compile Include="Sources\Calendar\CalendarMonth.cs" />
-    <Compile Include="Sources\Settings\ICalendarRules.cs" />
     <Compile Include="Sources\Extensions\DateTimeExtensions.cs" />
     <Compile Include="Sources\Calendar\CalendarPaints.cs" />
     <Compile Include="Sources\Extensions\SKExtensions.cs" />
     <Compile Include="Sources\Drawing\SKTouchEventArgs.cs" />
     <Compile Include="Sources\Settings\CalendarSettings.cs" />
-    <Compile Include="Sources\Settings\Localize.cs" />
     <Compile Include="Sources\UI\CalendarView.cs" />
     <Compile Include="Sources\UI\CalendarView.designer.cs" />
     <Compile Include="Sources\Drawing\SkiaPressGestureRecognizer.cs" />
     <Compile Include="Sources\Extensions\UIViewExtensions.cs" />
     <Compile Include="Sources\Settings\CalendarRules.cs" />
     <Compile Include="Sources\UI\SFFonts.cs" />
+    <Compile Include="Sources\Drawing\PaletColors.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\SanFranciscoDisplay-Bold.otf" />
