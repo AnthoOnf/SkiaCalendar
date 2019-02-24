@@ -13,14 +13,17 @@ namespace SkiaCalendar.Sources.Calendar
         private SKPaint _paint { get; set; }
         private readonly List<string> _daysOfWeek;
 
-        public CalendarWeekDays(SKPaint paint)
+        private readonly CalendarSettings _calendarSettings;
+
+        public CalendarWeekDays(SKPaint paint, CalendarSettings calendarSettings)
         {
             _paint = paint;
+            _calendarSettings = calendarSettings;
 
             _daysOfWeek = Enum.GetValues(typeof(DayOfWeek))
                 .Cast<DayOfWeek>()
                 .Select(d => (((int)d + 1) % 7))
-                .Select(d => new CultureInfo("en").DateTimeFormat.DayNames[d])
+                .Select(d => _calendarSettings.Culture.DateTimeFormat.DayNames[d].ToUpper())
                 .Select(d => d.Substring(0, 1))
                 .ToList();
         }

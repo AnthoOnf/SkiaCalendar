@@ -47,9 +47,7 @@ namespace SkiaCalendar.Sources.UI
         public void ResizeAndLayoutIfNeeded(nfloat newHeight)
         {
             CalendarGridWrapperViewHeight.Constant = newHeight /*- CalendarMonthSelector.Frame.Height*/;
-
             LayoutIfNeeded();
-
             _calendarGridView.Frame = CalendarGridWrapperView.Bounds;
         }
 

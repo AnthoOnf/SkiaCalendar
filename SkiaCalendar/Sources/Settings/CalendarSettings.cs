@@ -18,7 +18,6 @@ namespace SkiaCalendar.Sources.Settings
 
         public DateTime SelectedDate { get; set; } = DateTime.Today;
 
-
         public Action<DateTime> OnDate;
 
         public DateTime MinDate { get; }

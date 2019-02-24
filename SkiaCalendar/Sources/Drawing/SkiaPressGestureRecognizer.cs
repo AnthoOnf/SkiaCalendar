@@ -31,9 +31,7 @@ namespace SkiaCalendar.Sources.Drawing
 
             var point = t.LocationInView(_view);
 
-            Debug.WriteLine("SkiaPressGestureRecognizer" + point);
-
-            _onTouchAction(new SKTouchEventArgs(0, SKTouchAction.Moved, // todo : check for type
+            _onTouchAction(new SKTouchEventArgs(0, SKTouchAction.Moved,
                 new SKPoint(
                     (float)point.X * _calendarSettings.ScaleFactor,
                     (float)point.Y * _calendarSettings.ScaleFactor

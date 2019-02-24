@@ -9,14 +9,17 @@ namespace SkiaCalendar.Sources.Calendar
     public class CalendarMonth : SkiaSprite
     {
         private readonly Action<DateTime> _onSelectDate;
+        private readonly CalendarSettings _calendarSettings;
 
         public CalendarMonth(DateTime selectedMonth,
                             DateTime selectedDate,
                             Action<DateTime> onSelectDate,
                             CalendarPaints paints,
-                            CalendarRules calendarRules)
+                            CalendarRules calendarRules,
+                            CalendarSettings calendarSettings)
         {
             _onSelectDate = onSelectDate;
+            _calendarSettings = calendarSettings;
 
             var firstDay = selectedMonth.GetFirstDayOfMonth();
             var firstDayOfFirstWeek = firstDay.AddDays(-firstDay.GetDayPositionInWeek());
@@ -33,7 +36,7 @@ namespace SkiaCalendar.Sources.Calendar
             Add(new SkiaGrid(1, 1, CalendarDrawer.DAYS_PER_WEEK, paints.PaintLine, 0, CalendarDrawer.HeaderHeight));
 
             Add(new SkiaGrid(totalWeeks, CalendarDrawer.MAX_DISPLAYED_WEEKS, CalendarDrawer.DAYS_PER_WEEK, paints.PaintLine, CalendarDrawer.HeaderHeight));
-            Add(new CalendarWeekDays(paints.PaintHeaderDay));
+            Add(new CalendarWeekDays(paints.PaintHeaderDay, _calendarSettings));
         }
 
         private void SelectDate(DateTime time)

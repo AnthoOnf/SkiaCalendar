@@ -6,12 +6,12 @@ namespace SkiaCalendar.Sources.Calendar
 {
     public class CalendarPrevNext : SkiaLabel
     {
-        int _direction;
+        private readonly int _direction;
 
-        private string _label;
+        private readonly string _label;
         protected override string Text => _label;
 
-        private SKPaint _paint;
+        private readonly SKPaint _paint;
         protected override SKPaint Paint => _paint;
 
         public CalendarPrevNext(string label, int direction, SKPaint paint, Action<int> action)

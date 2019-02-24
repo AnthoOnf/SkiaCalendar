@@ -17,7 +17,7 @@ namespace SkiaCalendar
 
             CalendarSettings settings = new CalendarSettings(DateTime.Today, DateTime.Today.Add(TimeSpan.FromDays(365)))
             {
-                Culture = new CultureInfo("fr"),
+                Culture = new CultureInfo("en"),
                 DateMonthFormat = "MMMM yyyy"
             };
 

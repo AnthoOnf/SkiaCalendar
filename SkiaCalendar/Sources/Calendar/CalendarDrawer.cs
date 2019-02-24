@@ -51,7 +51,7 @@ namespace SkiaCalendar.Sources.Calendar
 
             _currentMonth = selectedMonth;
 
-            _currentMonthSprite = new CalendarMonth(_currentMonth, _selectedDate, SelectDate, _paints, _calendarSettings.CalendarRules);
+            _currentMonthSprite = new CalendarMonth(_currentMonth, _selectedDate, SelectDate, _paints, _calendarSettings.CalendarRules, _calendarSettings);
             Add(_currentMonthSprite);
 
             SetNeedsDisplay();
