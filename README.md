@@ -43,16 +43,17 @@ CalendarSettings settings = new CalendarSettings(minimumDate, maximumDate);
 
 ****Customizing settings****
 
+You can set your culture info, and the DateTime Format for the label of the month in the header.
+
 ```csharp
-var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("ChildViewController");
+var minimumDate = DateTime.Today;
+var maximumDate = DateTime.Today.Add(TimeSpan.FromDays(365));
 
-SheetSize[] sheetSizes = { SheetSize.Fixed(300f), SheetSize.FullScreen };
-
-var bottomSheetController = SheetViewController(controller)
-bottomSheetController.DismissOnBackgroundTap = false;
-bottomSheetController.RoundTopCorner = false;
-
-this.PresentModalViewController(bottomSheetController, false)
+CalendarSettings settings = new CalendarSettings(minimumDate, maximumDate)
+{
+    Culture = new CultureInfo("en"),
+    DateMonthFormat = "MMMM yyyy"
+};
 ```
 
 ## Settings

@@ -14,7 +14,7 @@ namespace SkiaCalendar.Sources.Settings
 
         public UIColor BackgroundCellColor => UIColor.FromRGB(44, 50, 80);
 
-        public CalendarRules CalendarRules { get; set; }
+        public CalendarRules CalendarRules { get; private set; }
 
         public DateTime SelectedDate { get; set; } = DateTime.Today;
 
