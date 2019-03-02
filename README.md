@@ -18,7 +18,7 @@ Apple did'nt make a calendar component, and I know it not pretty simple to make 
 
 So I share with you this calendar, all PR and suggestions are welcome.
 
-You can custumize the color of the calendar, and some rules.
+You can customize the color of the calendar, and some rules.
 Like if you want to disable some date, enable the week end, set your start date and your end date etc...
 
 
@@ -31,7 +31,7 @@ First you have to instantiate CalendarSettings with a minimum date and maximum d
 
 __The constructor is_ `new CalendarSettings(minDate, maxDate, selectedDate, onDateSelected)`. selectedDate and onDateSelected are optional._
 
-****Using default settings****
+****Instantiate CalendarSettings with default settings****
 
 ```csharp
 
