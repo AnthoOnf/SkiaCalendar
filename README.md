@@ -56,30 +56,13 @@ CalendarSettings settings = new CalendarSettings(minimumDate, maximumDate)
 };
 ```
 
-## Settings
+****Create the view****
+
+Now you have to create the view and add it in subview to your parent view. Call the CalendarView.Create with the calendarSettings.
 
 ```csharp
-// The color of the overlay above the sheet.
-public UIColor OverlayColor => UIColor.FromRGBA(0, 0, 0, (int)70  *  255);
-```
-
-```csharp
-// Sets the heights, the sheets will try to stick to. It will not resize the current size, but will affect all future resizing of the sheet.
-public void SetSizes(SheetSize[]  sizes, bool animated = true)
-```
-
-```csharp
-/// This should be called by any child view controller that expects the sheet to use be able to expand/collapse when the scroll view is at the top.
-public void HandleScrollView(UIScrollView scrollView)
-``` 
-
-There is an extension on UIViewController that gives you a `BottomSheetViewController` that attempts to find the current SheetViewController so you can attach like this:
-
-```csharp
-public override void ViewDidLoad() {
-
-base.ViewDidLoad()
-this.bottomSheetViewController?.HandleScrollView(this.scrollView) // or tableView/collectionView/etc
-
-}
+CalendarView calendarView = CalendarView.Create(settings);
+this.CalendarContentView.AddSubview(calendarView);
+calendarView.FillParent();
+calendarView.AdjustCalendarView();
 ```
