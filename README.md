@@ -29,7 +29,7 @@ Using the SkiaCalendar with a default configuration is pretty simple.
 
 First you have to instantiate CalendarSettings with a minimum date and maximum date.
 
-__The constructor is_ `new CalendarSettings(minDate, maxDate, selectedDate, onDateSelected)`. selectedDate and onDateSelected are optional._
+__The constructor is_ `new CalendarSettings(minDate, maxDate, selectedDate, onDateSelected)`. `selectedDate` and `onDateSelected` are optional._
 
 ****Instantiate CalendarSettings with default settings****
 
